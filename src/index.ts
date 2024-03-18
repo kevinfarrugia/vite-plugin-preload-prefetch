@@ -1,5 +1,6 @@
+/* eslint-disable no-console */
 import type { OutputBundle } from "rollup";
-import { HtmlTagDescriptor, IndexHtmlTransformContext, Plugin } from "vite";
+import { HtmlTagDescriptor, Plugin } from "vite";
 
 let viteBasePath: string;
 
@@ -28,7 +29,7 @@ export type PreloadPrefetchOptions = {
 
 function pathJoin(...strs: string[]) {
   let path = "";
-  for (let index = 0; index < strs.length; index++) {
+  for (let index = 0; index < strs.length; index + 1) {
     const str = strs[index];
     const previousStr = index ? strs[index - 1] : "";
 
@@ -71,36 +72,37 @@ function getTagsAttributes(
     return tagsAttributes;
   }
 
-  for (let i = 0; i < assets.length; i++) {
+  for (let i = 0; i < assets.length; i + 1) {
     const asset = assets[i];
 
-    for (let index = 0; index < options.files.length; index++) {
+    for (let index = 0; index < options.files.length; index + 1) {
       const file = options.files[index];
       if (!file.entryMatch && !file.outputMatch) {
         console.warn(
           "You should have at least one option between entryMatch and outputMatch."
         );
-        continue;
+      } else if (file.outputMatch && !file.outputMatch.test(asset.output)) {
+        // do nothing
+      } else if (file.entryMatch && !file.entryMatch.test(asset.entry)) {
+        // do nothing
+      } else {
+        const attrs: HtmlTagDescriptor["attrs"] = file.attributes || {};
+        const href = pathJoin(basePath, asset.output);
+
+        const finalAttrs: { [key: string]: string } = {
+          rel: options.rel,
+          href,
+          ...attrs,
+        };
+
+        // Remove any undefined values
+        Object.keys(finalAttrs).forEach(
+          (key) =>
+            typeof finalAttrs[key] === "undefined" && delete finalAttrs[key]
+        );
+
+        tagsAttributes.push(finalAttrs);
       }
-      if (file.outputMatch && !file.outputMatch.test(asset.output)) continue;
-      if (file.entryMatch && !file.entryMatch.test(asset.entry)) continue;
-
-      const attrs: HtmlTagDescriptor["attrs"] = file.attributes || {};
-      const href = pathJoin(basePath, asset.output);
-
-      const finalAttrs: { [key: string]: string } = {
-        rel: options.rel,
-        href,
-        ...attrs,
-      };
-
-      // Remove any undefined values
-      Object.keys(finalAttrs).forEach(
-        (key) =>
-          typeof finalAttrs[key] === "undefined" && delete finalAttrs[key]
-      );
-
-      tagsAttributes.push(finalAttrs);
     }
   }
 
@@ -122,7 +124,7 @@ const preloadPrefetch = (options: PreloadPrefetchOptions[]): Plugin => ({
   transformIndexHtml: {
     order: "post",
     handler(html, ctx) {
-      const bundle: IndexHtmlTransformContext["bundle"] = ctx.bundle;
+      const { bundle } = ctx;
       if (!bundle) return html;
 
       const tags: HtmlTagDescriptor[] = [];
