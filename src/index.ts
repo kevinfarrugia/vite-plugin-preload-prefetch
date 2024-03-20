@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import type { OutputBundle } from "rollup";
+import { OutputBundle } from "rollup";
 import type { HtmlTagDescriptor, Plugin } from "vite";
 
 let viteBasePath: string;
@@ -115,7 +115,7 @@ function getTagsAttributes(
  * - https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel/prefetch
  * - https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel/preload
  */
-const preloadPrefetch = (options: PreloadPrefetchOptions[]): Plugin => ({
+export const preloadPrefetch = (options: PreloadPrefetchOptions[]): Plugin => ({
   name: "preloadPrefetch",
   configResolved(config) {
     // Base path is sanitized by vite with the final trailing slash
