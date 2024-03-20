@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import type { OutputBundle } from "rollup";
-import { HtmlTagDescriptor, Plugin } from "vite";
+import type { HtmlTagDescriptor, Plugin } from "vite";
 
 let viteBasePath: string;
 
