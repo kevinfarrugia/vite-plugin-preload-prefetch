@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-preload-prefetch",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Vite plugin to preload and/or prefetch resources that match a regular expression.",
   "engines": {
     "node": ">=16.0"
