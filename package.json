@@ -57,7 +57,7 @@
     "typescript": "^5.4.2"
   },
   "peerDependencies": {
-    "vite": "^5.1.6"
+    "vite": "^4.0.0"
   },
   "files": [
     "dist",
