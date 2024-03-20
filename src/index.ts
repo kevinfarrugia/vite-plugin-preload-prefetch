@@ -29,7 +29,7 @@ export type PreloadPrefetchOptions = {
 
 function pathJoin(...strs: string[]) {
   let path = "";
-  for (let index = 0; index < strs.length; index + 1) {
+  for (let index = 0; index < strs.length; index += 1) {
     const str = strs[index];
     const previousStr = index ? strs[index - 1] : "";
 
@@ -72,10 +72,10 @@ function getTagsAttributes(
     return tagsAttributes;
   }
 
-  for (let i = 0; i < assets.length; i + 1) {
+  for (let i = 0; i < assets.length; i += 1) {
     const asset = assets[i];
 
-    for (let index = 0; index < options.files.length; index + 1) {
+    for (let index = 0; index < options.files.length; index += 1) {
       const file = options.files[index];
       if (!file.entryMatch && !file.outputMatch) {
         console.warn(
@@ -125,7 +125,7 @@ export const preloadPrefetch = (options: PreloadPrefetchOptions[]): Plugin => ({
     order: "post",
     handler(html, ctx) {
       const { bundle } = ctx;
-      if (!bundle) return html;
+      if (!(bundle && options)) return html;
 
       const tags: HtmlTagDescriptor[] = [];
 
