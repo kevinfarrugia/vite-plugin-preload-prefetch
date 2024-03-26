@@ -1,6 +1,6 @@
 # vite-plugin-preload-prefetch
 
-[![NPM version](https://img.shields.io/npm/v/vite-plugin-fetchpriority)](https://www.npmjs.com/package/vite-plugin-fetchpriority) [![node-current](https://img.shields.io/node/v/vite-plugin-fetchpriority)](https://nodejs.org/) 
+[![NPM version](https://img.shields.io/npm/v/vite-plugin-preload-prefetch)](https://www.npmjs.com/package/vite-plugin-preload-prefetch) [![node-current](https://img.shields.io/node/v/vite-plugin-preload-prefetch)](https://nodejs.org/) 
 
 Preload and prefetch assets in your HTML file using regular expressions.
 
