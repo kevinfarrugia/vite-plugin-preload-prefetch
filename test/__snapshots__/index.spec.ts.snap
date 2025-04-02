@@ -1,41 +1,71 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`preloadPrefetch > should add prefetch to dynamically imported file 1`] = `
+exports[`PreloadPrefetch Plugin > should add prefetch links to the start of <head> 1`] = `
 "<!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="prefetch" href="/assets/index-YmWju7QB.css">
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
-    <script type="module" crossorigin src="/assets/index-C5-3278v.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-BLu0-TaQ.css">
-    <link rel="prefetch" href="/assets/form-validation-DZda6X8H.js">
+    <script type="module" crossorigin src="/assets/index-7FPxZ1Nm.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-YmWju7QB.css">
   </head>
   <body>
     <h1>Test App</h1>
+    <form id="myForm">
+      <input type="text" name="name" value="John Doe" />
+      <input type="text" name="age" value="30" />
+    </form>
   </body>
 </html>"
 `;
 
-exports[`preloadPrefetch > should add preload to WOFF2 font files 1`] = `
+exports[`PreloadPrefetch Plugin > should add prefetch to dynamically imported file 1`] = `
 "<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
-    <script type="module" crossorigin src="/assets/index-C5-3278v.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-BLu0-TaQ.css">
-    <link rel="preload" href="/assets/Roboto-Bold-OBUL28o9.woff2" type="font/woff2" as="font" crossorigin="anonymous">
-    <link rel="preload" href="/assets/Roboto-Medium-DRylU_ql.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+    <script type="module" crossorigin src="/assets/index-7FPxZ1Nm.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-YmWju7QB.css">
+    <link rel="prefetch" href="/assets/form-validation-CTJOkw2k.js">
   </head>
   <body>
     <h1>Test App</h1>
+    <form id="myForm">
+      <input type="text" name="name" value="John Doe" />
+      <input type="text" name="age" value="30" />
+    </form>
   </body>
 </html>"
 `;
 
-exports[`preloadPrefetch > should add preload to WOFF2 font files at start of <head> 1`] = `
+exports[`PreloadPrefetch Plugin > should add preload links with custom attributes 1`] = `
+"<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <script type="module" crossorigin src="/assets/index-7FPxZ1Nm.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-YmWju7QB.css">
+    <link rel="preload" href="/assets/form-validation-CTJOkw2k.js" as="script" crossorigin="use-credentials">
+    <link rel="preload" href="/assets/index-7FPxZ1Nm.js" as="script" crossorigin="use-credentials">
+  </head>
+  <body>
+    <h1>Test App</h1>
+    <form id="myForm">
+      <input type="text" name="name" value="John Doe" />
+      <input type="text" name="age" value="30" />
+    </form>
+  </body>
+</html>"
+`;
+
+exports[`PreloadPrefetch Plugin > should add preload to WOFF2 font files at start of <head> 1`] = `
 "<!DOCTYPE html>
 <html lang="en">
   <head>
@@ -45,11 +75,59 @@ exports[`preloadPrefetch > should add preload to WOFF2 font files at start of <h
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
-    <script type="module" crossorigin src="/assets/index-C5-3278v.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-BLu0-TaQ.css">
+    <script type="module" crossorigin src="/assets/index-7FPxZ1Nm.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-YmWju7QB.css">
   </head>
   <body>
     <h1>Test App</h1>
+    <form id="myForm">
+      <input type="text" name="name" value="John Doe" />
+      <input type="text" name="age" value="30" />
+    </form>
+  </body>
+</html>"
+`;
+
+exports[`PreloadPrefetch Plugin > should handle multiple options with different rel attributes 1`] = `
+"<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <script type="module" crossorigin src="/assets/index-7FPxZ1Nm.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-YmWju7QB.css">
+    <link rel="preload" href="/assets/Roboto-Bold-OBUL28o9.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="/assets/Roboto-Medium-DRylU_ql.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+    <link rel="prefetch" href="/assets/form-validation-CTJOkw2k.js">
+    <link rel="prefetch" href="/assets/index-7FPxZ1Nm.js">
+  </head>
+  <body>
+    <h1>Test App</h1>
+    <form id="myForm">
+      <input type="text" name="name" value="John Doe" />
+      <input type="text" name="age" value="30" />
+    </form>
+  </body>
+</html>"
+`;
+
+exports[`PreloadPrefetch Plugin > should not add links if no matching files are found 1`] = `
+"<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <script type="module" crossorigin src="/assets/index-7FPxZ1Nm.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-YmWju7QB.css">
+  </head>
+  <body>
+    <h1>Test App</h1>
+    <form id="myForm">
+      <input type="text" name="name" value="John Doe" />
+      <input type="text" name="age" value="30" />
+    </form>
   </body>
 </html>"
 `;
