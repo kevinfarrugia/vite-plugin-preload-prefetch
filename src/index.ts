@@ -27,9 +27,9 @@ export type PreloadPrefetchOptions = {
   injectTo?: "head" | "head-prepend";
 };
 
-function pathJoin(...strs: string[]) {
-  let path = "";
-  for (let index = 0; index < strs.length; index += 1) {
+function pathJoin(base: string, ...strs: string[]) {
+  let path = strs[0] ?? "";
+  for (let index = 1; index < strs.length; index += 1) {
     const str = strs[index];
     const previousStr = index ? strs[index - 1] : "";
 

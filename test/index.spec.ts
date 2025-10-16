@@ -1,14 +1,15 @@
 import { resolve } from "node:path";
 
 import { OutputAsset, RollupOutput } from "rollup";
-import { build } from "vite";
+import { build, InlineConfig } from "vite";
 import { test, describe, expect, vi } from "vitest";
 import PreloadPrefetch, { PreloadPrefetchOptions } from "../src";
 
-async function buildVite(options: PreloadPrefetchOptions[]) {
+async function buildVite(options: PreloadPrefetchOptions[], inlineConfig: InlineConfig = {}) {
   const { output } = (await build({
     root: resolve(__dirname, "./fixtures"),
     plugins: [PreloadPrefetch(options)],
+    ...inlineConfig,
   })) as RollupOutput;
 
   const { source: indexSource } = output.find(
@@ -163,6 +164,28 @@ describe("PreloadPrefetch Plugin", () => {
     ];
 
     await buildVite(options).then((result) => {
+      expect(result).toMatchSnapshot();
+    });
+  });
+
+  test("should not add a leading slash for external base path", async () => {
+    const options: PreloadPrefetchOptions[] = [
+      {
+        rel: "preload",
+        files: [
+            {
+                entryMatch: /\.woff2$/
+            }
+        ],
+        injectTo: "head",
+      },
+    ];
+
+    const viteOptions: InlineConfig = {
+      base: "https://cdn.example.com/statics/",
+    };
+
+    await buildVite(options, viteOptions).then((result) => {
       expect(result).toMatchSnapshot();
     });
   });
