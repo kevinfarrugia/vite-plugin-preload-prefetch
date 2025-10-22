@@ -32,12 +32,23 @@ function pathJoin(...strs: string[]) {
   for (let index = 0; index < strs.length; index += 1) {
     const str = strs[index];
     const previousStr = index ? strs[index - 1] : "";
+    const isAbsoluteUrl = /^https?:\/\//.test(str);
+    const isRelativePath = str.startsWith("./") || previousStr.startsWith("./");
 
-    if (str && !str.startsWith("/") && !previousStr.endsWith("/"))
+    if (index === 0 && isAbsoluteUrl) {
+      path = str;
+    } else if (
+      str &&
+      !str.startsWith("/") &&
+      !previousStr.endsWith("/") &&
+      !isAbsoluteUrl &&
+      !isRelativePath
+    ) {
       path += `/${str}`;
-    else path += str;
+    } else {
+      path += str;
+    }
   }
-
   return path;
 }
 
