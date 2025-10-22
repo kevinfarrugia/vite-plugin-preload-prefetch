@@ -1,16 +1,26 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`PreloadPrefetch Plugin > should add prefetch links to the start of <head> 1`] = `
-"<!DOCTYPE html>
+exports[`PreloadPrefetch Plugin > test custom-attributes 1`] = `
+"<!doctype html>
 <html lang="en">
   <head>
-    <link rel="prefetch" href="/assets/index-YmWju7QB.css">
-
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
     <script type="module" crossorigin src="/assets/index-7FPxZ1Nm.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-YmWju7QB.css">
+    <link rel="stylesheet" crossorigin href="/assets/index-YmWju7QB.css" />
+    <link
+      rel="preload"
+      href="/assets/form-validation-CTJOkw2k.js"
+      as="script"
+      crossorigin="use-credentials"
+    />
+    <link
+      rel="preload"
+      href="/assets/index-7FPxZ1Nm.js"
+      as="script"
+      crossorigin="use-credentials"
+    />
   </head>
   <body>
     <h1>Test App</h1>
@@ -19,19 +29,39 @@ exports[`PreloadPrefetch Plugin > should add prefetch links to the start of <hea
       <input type="text" name="age" value="30" />
     </form>
   </body>
-</html>"
+</html>
+"
 `;
 
-exports[`PreloadPrefetch Plugin > should add prefetch to dynamically imported file 1`] = `
-"<!DOCTYPE html>
+exports[`PreloadPrefetch Plugin > test custom-attributes with URL basePath  1`] = `
+"<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
-    <script type="module" crossorigin src="/assets/index-7FPxZ1Nm.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-YmWju7QB.css">
-    <link rel="prefetch" href="/assets/form-validation-CTJOkw2k.js">
+    <script
+      type="module"
+      crossorigin
+      src="https://cdn.example.com/assets/index-Cr2LILwB.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      crossorigin
+      href="https://cdn.example.com/assets/index-BAgHiCBu.css"
+    />
+    <link
+      rel="preload"
+      href="https://cdn.example.com/assets/form-validation-CTJOkw2k.js"
+      as="script"
+      crossorigin="use-credentials"
+    />
+    <link
+      rel="preload"
+      href="https://cdn.example.com/assets/index-Cr2LILwB.js"
+      as="script"
+      crossorigin="use-credentials"
+    />
   </head>
   <body>
     <h1>Test App</h1>
@@ -40,20 +70,35 @@ exports[`PreloadPrefetch Plugin > should add prefetch to dynamically imported fi
       <input type="text" name="age" value="30" />
     </form>
   </body>
-</html>"
+</html>
+"
 `;
 
-exports[`PreloadPrefetch Plugin > should add preload links with custom attributes 1`] = `
-"<!DOCTYPE html>
+exports[`PreloadPrefetch Plugin > test custom-attributes with basePath 1`] = `
+"<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
-    <script type="module" crossorigin src="/assets/index-7FPxZ1Nm.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-YmWju7QB.css">
-    <link rel="preload" href="/assets/form-validation-CTJOkw2k.js" as="script" crossorigin="use-credentials">
-    <link rel="preload" href="/assets/index-7FPxZ1Nm.js" as="script" crossorigin="use-credentials">
+    <script
+      type="module"
+      crossorigin
+      src="/base/assets/index-DoCgpryW.js"
+    ></script>
+    <link rel="stylesheet" crossorigin href="/base/assets/index-CA6iRNhf.css" />
+    <link
+      rel="preload"
+      href="/base/assets/form-validation-CTJOkw2k.js"
+      as="script"
+      crossorigin="use-credentials"
+    />
+    <link
+      rel="preload"
+      href="/base/assets/index-DoCgpryW.js"
+      as="script"
+      crossorigin="use-credentials"
+    />
   </head>
   <body>
     <h1>Test App</h1>
@@ -62,21 +107,31 @@ exports[`PreloadPrefetch Plugin > should add preload links with custom attribute
       <input type="text" name="age" value="30" />
     </form>
   </body>
-</html>"
+</html>
+"
 `;
 
-exports[`PreloadPrefetch Plugin > should add preload to WOFF2 font files at start of <head> 1`] = `
-"<!DOCTYPE html>
+exports[`PreloadPrefetch Plugin > test custom-attributes with relative basePath  1`] = `
+"<!doctype html>
 <html lang="en">
   <head>
-    <link rel="preload" href="/assets/Roboto-Bold-OBUL28o9.woff2" type="font/woff2" as="font" crossorigin="anonymous">
-    <link rel="preload" href="/assets/Roboto-Medium-DRylU_ql.woff2" type="font/woff2" as="font" crossorigin="anonymous">
-
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
-    <script type="module" crossorigin src="/assets/index-7FPxZ1Nm.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-YmWju7QB.css">
+    <script type="module" crossorigin src="./assets/index-BTUyZHJ8.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DnjSZFrA.css" />
+    <link
+      rel="preload"
+      href="./assets/form-validation-CTJOkw2k.js"
+      as="script"
+      crossorigin="use-credentials"
+    />
+    <link
+      rel="preload"
+      href="./assets/index-BTUyZHJ8.js"
+      as="script"
+      crossorigin="use-credentials"
+    />
   </head>
   <body>
     <h1>Test App</h1>
@@ -85,22 +140,20 @@ exports[`PreloadPrefetch Plugin > should add preload to WOFF2 font files at star
       <input type="text" name="age" value="30" />
     </form>
   </body>
-</html>"
+</html>
+"
 `;
 
-exports[`PreloadPrefetch Plugin > should handle multiple options with different rel attributes 1`] = `
-"<!DOCTYPE html>
+exports[`PreloadPrefetch Plugin > test dynamic-imports 1`] = `
+"<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
     <script type="module" crossorigin src="/assets/index-7FPxZ1Nm.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-YmWju7QB.css">
-    <link rel="preload" href="/assets/Roboto-Bold-OBUL28o9.woff2" type="font/woff2" as="font" crossorigin="anonymous">
-    <link rel="preload" href="/assets/Roboto-Medium-DRylU_ql.woff2" type="font/woff2" as="font" crossorigin="anonymous">
-    <link rel="prefetch" href="/assets/form-validation-CTJOkw2k.js">
-    <link rel="prefetch" href="/assets/index-7FPxZ1Nm.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-YmWju7QB.css" />
+    <link rel="prefetch" href="/assets/form-validation-CTJOkw2k.js" />
   </head>
   <body>
     <h1>Test App</h1>
@@ -109,18 +162,31 @@ exports[`PreloadPrefetch Plugin > should handle multiple options with different 
       <input type="text" name="age" value="30" />
     </form>
   </body>
-</html>"
+</html>
+"
 `;
 
-exports[`PreloadPrefetch Plugin > should not add links if no matching files are found 1`] = `
-"<!DOCTYPE html>
+exports[`PreloadPrefetch Plugin > test dynamic-imports with URL basePath  1`] = `
+"<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
-    <script type="module" crossorigin src="/assets/index-7FPxZ1Nm.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-YmWju7QB.css">
+    <script
+      type="module"
+      crossorigin
+      src="https://cdn.example.com/assets/index-Cr2LILwB.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      crossorigin
+      href="https://cdn.example.com/assets/index-BAgHiCBu.css"
+    />
+    <link
+      rel="prefetch"
+      href="https://cdn.example.com/assets/form-validation-CTJOkw2k.js"
+    />
   </head>
   <body>
     <h1>Test App</h1>
@@ -129,5 +195,579 @@ exports[`PreloadPrefetch Plugin > should not add links if no matching files are 
       <input type="text" name="age" value="30" />
     </form>
   </body>
-</html>"
+</html>
+"
+`;
+
+exports[`PreloadPrefetch Plugin > test dynamic-imports with basePath 1`] = `
+"<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <script
+      type="module"
+      crossorigin
+      src="/base/assets/index-DoCgpryW.js"
+    ></script>
+    <link rel="stylesheet" crossorigin href="/base/assets/index-CA6iRNhf.css" />
+    <link rel="prefetch" href="/base/assets/form-validation-CTJOkw2k.js" />
+  </head>
+  <body>
+    <h1>Test App</h1>
+    <form id="myForm">
+      <input type="text" name="name" value="John Doe" />
+      <input type="text" name="age" value="30" />
+    </form>
+  </body>
+</html>
+"
+`;
+
+exports[`PreloadPrefetch Plugin > test dynamic-imports with relative basePath  1`] = `
+"<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <script type="module" crossorigin src="./assets/index-BTUyZHJ8.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DnjSZFrA.css" />
+    <link rel="prefetch" href="./assets/form-validation-CTJOkw2k.js" />
+  </head>
+  <body>
+    <h1>Test App</h1>
+    <form id="myForm">
+      <input type="text" name="name" value="John Doe" />
+      <input type="text" name="age" value="30" />
+    </form>
+  </body>
+</html>
+"
+`;
+
+exports[`PreloadPrefetch Plugin > test head-prepend-prefetch 1`] = `
+"<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="prefetch" href="/assets/index-YmWju7QB.css" />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <script type="module" crossorigin src="/assets/index-7FPxZ1Nm.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-YmWju7QB.css" />
+  </head>
+  <body>
+    <h1>Test App</h1>
+    <form id="myForm">
+      <input type="text" name="name" value="John Doe" />
+      <input type="text" name="age" value="30" />
+    </form>
+  </body>
+</html>
+"
+`;
+
+exports[`PreloadPrefetch Plugin > test head-prepend-prefetch with URL basePath  1`] = `
+"<!doctype html>
+<html lang="en">
+  <head>
+    <link
+      rel="prefetch"
+      href="https://cdn.example.com/assets/index-BAgHiCBu.css"
+    />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <script
+      type="module"
+      crossorigin
+      src="https://cdn.example.com/assets/index-Cr2LILwB.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      crossorigin
+      href="https://cdn.example.com/assets/index-BAgHiCBu.css"
+    />
+  </head>
+  <body>
+    <h1>Test App</h1>
+    <form id="myForm">
+      <input type="text" name="name" value="John Doe" />
+      <input type="text" name="age" value="30" />
+    </form>
+  </body>
+</html>
+"
+`;
+
+exports[`PreloadPrefetch Plugin > test head-prepend-prefetch with basePath 1`] = `
+"<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="prefetch" href="/base/assets/index-CA6iRNhf.css" />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <script
+      type="module"
+      crossorigin
+      src="/base/assets/index-DoCgpryW.js"
+    ></script>
+    <link rel="stylesheet" crossorigin href="/base/assets/index-CA6iRNhf.css" />
+  </head>
+  <body>
+    <h1>Test App</h1>
+    <form id="myForm">
+      <input type="text" name="name" value="John Doe" />
+      <input type="text" name="age" value="30" />
+    </form>
+  </body>
+</html>
+"
+`;
+
+exports[`PreloadPrefetch Plugin > test head-prepend-prefetch with relative basePath  1`] = `
+"<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="prefetch" href="./assets/index-DnjSZFrA.css" />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <script type="module" crossorigin src="./assets/index-BTUyZHJ8.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DnjSZFrA.css" />
+  </head>
+  <body>
+    <h1>Test App</h1>
+    <form id="myForm">
+      <input type="text" name="name" value="John Doe" />
+      <input type="text" name="age" value="30" />
+    </form>
+  </body>
+</html>
+"
+`;
+
+exports[`PreloadPrefetch Plugin > test head-prepend-preload 1`] = `
+"<!doctype html>
+<html lang="en">
+  <head>
+    <link
+      rel="preload"
+      href="/assets/Roboto-Bold-OBUL28o9.woff2"
+      type="font/woff2"
+      as="font"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="/assets/Roboto-Medium-DRylU_ql.woff2"
+      type="font/woff2"
+      as="font"
+      crossorigin="anonymous"
+    />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <script type="module" crossorigin src="/assets/index-7FPxZ1Nm.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-YmWju7QB.css" />
+  </head>
+  <body>
+    <h1>Test App</h1>
+    <form id="myForm">
+      <input type="text" name="name" value="John Doe" />
+      <input type="text" name="age" value="30" />
+    </form>
+  </body>
+</html>
+"
+`;
+
+exports[`PreloadPrefetch Plugin > test head-prepend-preload with URL basePath  1`] = `
+"<!doctype html>
+<html lang="en">
+  <head>
+    <link
+      rel="preload"
+      href="https://cdn.example.com/assets/Roboto-Bold-OBUL28o9.woff2"
+      type="font/woff2"
+      as="font"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="https://cdn.example.com/assets/Roboto-Medium-DRylU_ql.woff2"
+      type="font/woff2"
+      as="font"
+      crossorigin="anonymous"
+    />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <script
+      type="module"
+      crossorigin
+      src="https://cdn.example.com/assets/index-Cr2LILwB.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      crossorigin
+      href="https://cdn.example.com/assets/index-BAgHiCBu.css"
+    />
+  </head>
+  <body>
+    <h1>Test App</h1>
+    <form id="myForm">
+      <input type="text" name="name" value="John Doe" />
+      <input type="text" name="age" value="30" />
+    </form>
+  </body>
+</html>
+"
+`;
+
+exports[`PreloadPrefetch Plugin > test head-prepend-preload with basePath 1`] = `
+"<!doctype html>
+<html lang="en">
+  <head>
+    <link
+      rel="preload"
+      href="/base/assets/Roboto-Bold-OBUL28o9.woff2"
+      type="font/woff2"
+      as="font"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="/base/assets/Roboto-Medium-DRylU_ql.woff2"
+      type="font/woff2"
+      as="font"
+      crossorigin="anonymous"
+    />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <script
+      type="module"
+      crossorigin
+      src="/base/assets/index-DoCgpryW.js"
+    ></script>
+    <link rel="stylesheet" crossorigin href="/base/assets/index-CA6iRNhf.css" />
+  </head>
+  <body>
+    <h1>Test App</h1>
+    <form id="myForm">
+      <input type="text" name="name" value="John Doe" />
+      <input type="text" name="age" value="30" />
+    </form>
+  </body>
+</html>
+"
+`;
+
+exports[`PreloadPrefetch Plugin > test head-prepend-preload with relative basePath  1`] = `
+"<!doctype html>
+<html lang="en">
+  <head>
+    <link
+      rel="preload"
+      href="./assets/Roboto-Bold-OBUL28o9.woff2"
+      type="font/woff2"
+      as="font"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="./assets/Roboto-Medium-DRylU_ql.woff2"
+      type="font/woff2"
+      as="font"
+      crossorigin="anonymous"
+    />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <script type="module" crossorigin src="./assets/index-BTUyZHJ8.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DnjSZFrA.css" />
+  </head>
+  <body>
+    <h1>Test App</h1>
+    <form id="myForm">
+      <input type="text" name="name" value="John Doe" />
+      <input type="text" name="age" value="30" />
+    </form>
+  </body>
+</html>
+"
+`;
+
+exports[`PreloadPrefetch Plugin > test multiple-rules 1`] = `
+"<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <script type="module" crossorigin src="/assets/index-7FPxZ1Nm.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-YmWju7QB.css" />
+    <link
+      rel="preload"
+      href="/assets/Roboto-Bold-OBUL28o9.woff2"
+      type="font/woff2"
+      as="font"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="/assets/Roboto-Medium-DRylU_ql.woff2"
+      type="font/woff2"
+      as="font"
+      crossorigin="anonymous"
+    />
+    <link rel="prefetch" href="/assets/form-validation-CTJOkw2k.js" />
+    <link rel="prefetch" href="/assets/index-7FPxZ1Nm.js" />
+  </head>
+  <body>
+    <h1>Test App</h1>
+    <form id="myForm">
+      <input type="text" name="name" value="John Doe" />
+      <input type="text" name="age" value="30" />
+    </form>
+  </body>
+</html>
+"
+`;
+
+exports[`PreloadPrefetch Plugin > test multiple-rules with URL basePath  1`] = `
+"<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <script
+      type="module"
+      crossorigin
+      src="https://cdn.example.com/assets/index-Cr2LILwB.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      crossorigin
+      href="https://cdn.example.com/assets/index-BAgHiCBu.css"
+    />
+    <link
+      rel="preload"
+      href="https://cdn.example.com/assets/Roboto-Bold-OBUL28o9.woff2"
+      type="font/woff2"
+      as="font"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="https://cdn.example.com/assets/Roboto-Medium-DRylU_ql.woff2"
+      type="font/woff2"
+      as="font"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="prefetch"
+      href="https://cdn.example.com/assets/form-validation-CTJOkw2k.js"
+    />
+    <link
+      rel="prefetch"
+      href="https://cdn.example.com/assets/index-Cr2LILwB.js"
+    />
+  </head>
+  <body>
+    <h1>Test App</h1>
+    <form id="myForm">
+      <input type="text" name="name" value="John Doe" />
+      <input type="text" name="age" value="30" />
+    </form>
+  </body>
+</html>
+"
+`;
+
+exports[`PreloadPrefetch Plugin > test multiple-rules with basePath 1`] = `
+"<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <script
+      type="module"
+      crossorigin
+      src="/base/assets/index-DoCgpryW.js"
+    ></script>
+    <link rel="stylesheet" crossorigin href="/base/assets/index-CA6iRNhf.css" />
+    <link
+      rel="preload"
+      href="/base/assets/Roboto-Bold-OBUL28o9.woff2"
+      type="font/woff2"
+      as="font"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="/base/assets/Roboto-Medium-DRylU_ql.woff2"
+      type="font/woff2"
+      as="font"
+      crossorigin="anonymous"
+    />
+    <link rel="prefetch" href="/base/assets/form-validation-CTJOkw2k.js" />
+    <link rel="prefetch" href="/base/assets/index-DoCgpryW.js" />
+  </head>
+  <body>
+    <h1>Test App</h1>
+    <form id="myForm">
+      <input type="text" name="name" value="John Doe" />
+      <input type="text" name="age" value="30" />
+    </form>
+  </body>
+</html>
+"
+`;
+
+exports[`PreloadPrefetch Plugin > test multiple-rules with relative basePath  1`] = `
+"<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <script type="module" crossorigin src="./assets/index-BTUyZHJ8.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DnjSZFrA.css" />
+    <link
+      rel="preload"
+      href="./assets/Roboto-Bold-OBUL28o9.woff2"
+      type="font/woff2"
+      as="font"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="./assets/Roboto-Medium-DRylU_ql.woff2"
+      type="font/woff2"
+      as="font"
+      crossorigin="anonymous"
+    />
+    <link rel="prefetch" href="./assets/form-validation-CTJOkw2k.js" />
+    <link rel="prefetch" href="./assets/index-BTUyZHJ8.js" />
+  </head>
+  <body>
+    <h1>Test App</h1>
+    <form id="myForm">
+      <input type="text" name="name" value="John Doe" />
+      <input type="text" name="age" value="30" />
+    </form>
+  </body>
+</html>
+"
+`;
+
+exports[`PreloadPrefetch Plugin > test no-matching-files 1`] = `
+"<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <script type="module" crossorigin src="/assets/index-7FPxZ1Nm.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-YmWju7QB.css" />
+  </head>
+  <body>
+    <h1>Test App</h1>
+    <form id="myForm">
+      <input type="text" name="name" value="John Doe" />
+      <input type="text" name="age" value="30" />
+    </form>
+  </body>
+</html>
+"
+`;
+
+exports[`PreloadPrefetch Plugin > test no-matching-files with URL basePath  1`] = `
+"<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <script
+      type="module"
+      crossorigin
+      src="https://cdn.example.com/assets/index-Cr2LILwB.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      crossorigin
+      href="https://cdn.example.com/assets/index-BAgHiCBu.css"
+    />
+  </head>
+  <body>
+    <h1>Test App</h1>
+    <form id="myForm">
+      <input type="text" name="name" value="John Doe" />
+      <input type="text" name="age" value="30" />
+    </form>
+  </body>
+</html>
+"
+`;
+
+exports[`PreloadPrefetch Plugin > test no-matching-files with basePath 1`] = `
+"<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <script
+      type="module"
+      crossorigin
+      src="/base/assets/index-DoCgpryW.js"
+    ></script>
+    <link rel="stylesheet" crossorigin href="/base/assets/index-CA6iRNhf.css" />
+  </head>
+  <body>
+    <h1>Test App</h1>
+    <form id="myForm">
+      <input type="text" name="name" value="John Doe" />
+      <input type="text" name="age" value="30" />
+    </form>
+  </body>
+</html>
+"
+`;
+
+exports[`PreloadPrefetch Plugin > test no-matching-files with relative basePath  1`] = `
+"<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <script type="module" crossorigin src="./assets/index-BTUyZHJ8.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DnjSZFrA.css" />
+  </head>
+  <body>
+    <h1>Test App</h1>
+    <form id="myForm">
+      <input type="text" name="name" value="John Doe" />
+      <input type="text" name="age" value="30" />
+    </form>
+  </body>
+</html>
+"
 `;
